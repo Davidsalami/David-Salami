@@ -1,0 +1,26 @@
+*{box-sizing:border-box}html,body{height:100%;margin:0;font-family:Inter,Segoe UI,system-ui,Arial;background:linear-gradient(180deg,#fffbf6 0%, #fff6f9 45%, #fff 100%);color:#222}
+.stage{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px}
+.title{font-size:2rem;margin:0 0 16px;text-align:center}
+.controls{display:flex;gap:10px;align-items:center;margin-bottom:18px}
+.controls button{background:#ff6b9a;border:none;padding:10px 14px;border-radius:8px;color:white;font-weight:600;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.12)}
+.controls button:active{transform:translateY(1px)}
+.status{margin-left:10px;font-size:.9rem;color:#555}
+.scene{position:relative;width:520px;max-width:90%;height:360px;display:flex;align-items:flex-end;justify-content:center}
+.cake-plate{width:420px;height:260px;display:flex;align-items:flex-end;justify-content:center}
+.cake{width:320px;height:180px;background:linear-gradient(180deg,#ffdfdf,#ffd1e1);border-radius:16px 16px 28px 28px;position:relative;box-shadow:0 14px 30px rgba(0,0,0,0.12)}
+.frosting{position:absolute;left:8px;right:8px;top:10px;height:48px;background:linear-gradient(180deg,#fff,#ffe6f0);border-radius:10px}
+.candles{position:absolute;left:50%;top:-38px;transform:translateX(-50%);display:flex;gap:22px}
+.candle{width:18px;height:80px;background:linear-gradient(180deg,#ffe9b8,#ffd07a);border-radius:6px;position:relative;display:flex;align-items:flex-start;justify-content:center}
+.wick{position:absolute;top:6px;width:2px;height:6px;background:#332b2b;border-radius:1px}
+.flame{position:absolute;top:-14px;width:22px;height:28px;background:radial-gradient(closest-side,#ffd86b 10%,#ff7b7b 60%,transparent 61%);border-radius:50% 50% 60% 60%;transform-origin:50% 90%;filter:drop-shadow(0 6px 8px rgba(255,120,100,0.12));animation:flicker 160ms infinite}
+@keyframes flicker{0%{transform:translateY(0) scale(1)}50%{transform:translateY(-2px) scale(.98)}100%{transform:translateY(0) scale(1.02)}}
+.candle.out .flame{animation:none;opacity:0;transform:scale(.6);transition:opacity .6s ease,transform .6s ease}
+.smoke{position:absolute;left:50%;top:-32px;transform:translateX(-50%);width:8px;height:8px;border-radius:50%;opacity:0}
+.smoke.show{animation:smokeUp 1600ms forwards}
+@keyframes smokeUp{0%{opacity:0;transform:translate(-50%,0) scale(.4)}30%{opacity:.6}100%{opacity:0;transform:translate(-50%,-140px) scale(2.2)}}
+.confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.confetti .piece{position:absolute;width:8px;height:14px;border-radius:2px;opacity:0;transform-origin:center;animation:confettiFall 1600ms linear forwards}
+@keyframes confettiFall{0%{opacity:1;transform:translate3d(0,-10px,0) rotate(0deg)}100%{opacity:1;transform:translate3d(var(--dx),600px,0) rotate(720deg)}}
+.instructions{text-align:center;color:#444;margin-top:12px}
+/* small responsive tweaks */
+@media (max-width:520px){.scene{height:300px}.cake{width:280px;height:160px}}

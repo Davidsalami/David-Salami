@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Birthday Cake — Make a Wish</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="stage">
+    <h1 class="title">Happy Birthday Faithy!</h1>
+
+    <div class="controls">
+      <button id="promptBtn">MAKE A WISH MY LOVE</button>
+      <button id="blowBtn">Blow (manual)</button>
+      <button id="listenBtn">Start Mic (optional)</button>
+      <div id="status" class="status">Idle</div>
+    </div>
+
+    <section class="scene">
+      <div class="cake-plate">
+        <div class="cake">
+          <div class="frosting"></div>
+          <div class="candles">
+            <div class="candle" id="candle">
+              <div class="wick"></div>
+              <div class="flame" id="flame"></div>
+              <div class="smoke" id="smoke"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="confetti" class="confetti"></div>
+    </section>
+
+    <p class="instructions">"make a wish", then either blow into the mic or press "Blow" to extinguish the candle.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
